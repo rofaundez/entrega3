@@ -1,0 +1,79 @@
+<ion-content [fullscreen]="true">
+  <!-- Tarjeta principal -->
+  <ion-card class="user-card">
+    <!-- Encabezado centrado -->
+    <div class="centered-content header">
+      <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+    </div>
+
+    <!-- Formulario dentro de la tarjeta -->
+    <form class="form-container">
+      <ion-item>
+        <ion-label position="floating">{{ "MisDatos.form.Cuenta" | translate }}</ion-label>
+        <ion-input [(ngModel)]="user.userName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="botones" position="floating">{{ "MisDatos.form.Correo" | translate }}</ion-label>
+        <ion-input [(ngModel)]="user.email" type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="botones" position="floating">{{ "MisDatos.form.Contraseña" | translate }}</ion-label>
+        <ion-input [(ngModel)]="user.password" type="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="botones" position="floating">{{ "MisDatos.form.Pregunta.secreta" | translate }}</ion-label>
+        <ion-input [(ngModel)]="user.secretQuestion"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="botones" position="floating">{{ "MisDatos.form.Respuesta.secreta" | translate }}</ion-label>
+        <ion-input [(ngModel)]="user.secretAnswer"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="botones" position="floating">{{ "MisDatos.form.Nombre" | translate }}</ion-label>
+        <ion-input [(ngModel)]="user.firstName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="botones" position="floating">{{ "MisDatos.form.Apellido" | translate }}</ion-label>
+        <ion-input [(ngModel)]="user.lastName"></ion-input>
+      </ion-item>
+
+      <ion-item >
+        <ion-label position="stacked">{{ "MisDatos.form.Educación" | translate }}</ion-label>
+        <ion-select [(ngModel)]="user.educationalLevel.id" 
+                    (ionChange)="actualizarNivelEducacional($event)">
+          <ion-select-option *ngFor="let nivelEducacional of listaNivelesEducacionales"
+                             [value]="nivelEducacional.id">
+            {{ nivelEducacional.name }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="centrado">
+        <ion-label position="stacked">{{ "Nacimiento" | translate }}</ion-label>
+        <br>
+        <ion-datetime display-format="DD/MM/YYYY" 
+                      [(ngModel)]="user.dateOfBirth" 
+                      (ionChange)="onFechaNacimientoChange($event)">
+          <ng-container *ngIf="user.dateOfBirth">
+            {{ user.dateOfBirth | date: 'dd/MM/yyyy' }}
+          </ng-container>
+          <br>
+        </ion-datetime>
+        <br>
+      </ion-item>
+    </form>
+
+    <!-- Botón para guardar -->
+    <div class="centered-content">
+      <ion-button (click)="guardaruser()" expand="block" color="primary">
+        {{ "Guardar" | translate }}
+      </ion-button>
+    </div>
+  </ion-card>
+</ion-content>

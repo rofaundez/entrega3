@@ -1,0 +1,100 @@
+.centered-content {
+  display: flex;
+  justify-content: center;  /* Centra el contenido horizontalmente */
+}
+
+h3 {
+  text-align: center;
+  color: #000;  /* Centra el texto dentro del h3 */
+}
+
+ion-card {
+  border-radius: 10px;      /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para la tarjeta */
+  margin: 10px;            /* Margen alrededor de la tarjeta */
+  padding: 20px;           /* Espaciado interno */
+}
+
+/* Estilos para la tarjeta */
+.user-card {
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+  margin: 20px; /* Separación de los bordes */
+  padding: 20px; /* Espaciado interno */
+}
+
+/* Encabezado centrado */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.label{
+  transition: transform 0.2s ease, color 0.2s ease; /* Transición suave */
+}
+
+.form-container ion-item {
+  margin-bottom: 11px; /* Separación entre los campos */
+  border-radius: 11px;
+  width: 100%; /* Asegura que los campos ocupen todo el ancho del contenedor */
+  max-width: 500px; /* Limita el ancho máximo para los campos */
+}
+
+.header h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #444444; /* Texto oscuro */
+}
+
+.form-container ion-label {
+  font-size: 16px; /* Tamaño de fuente */
+  color: #777; /* Color del texto */
+}
+
+.form-container ion-item ion-input:focus + ion-label,
+.form-container ion-item ion-input:valid + ion-label {
+  transform: translateY(-20px); /* Levanta el texto hacia arriba */
+  font-size: 14px; /* Tamaño de la fuente reducido */
+  color: #007bff; /* Color azul al estar enfocado */
+}
+
+.centered-content ion-button {
+  width: 100%; /* Botón de ancho completo */
+  max-width: 250px; /* Máximo ancho del botón */
+  font-size: 1rem; /* Tamaño de la fuente */
+  font-weight: bold; /* Negrita para el texto del botón */
+  margin-top: 20px; /* Espaciado superior para el botón */
+}
+
+
+
+/* Contenedor del formulario */
+.form-container {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos en columna */
+  justify-content: center; /* Centra verticalmente el contenido */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+
+.centrado{
+  flex-direction: column; /* Alinea los elementos en columna */
+  align-items: center;
+  justify-content: center; /* Centra verticalmente el contenido */
+}
+
+/* Botón centrado */
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.centered-content ion-button {
+  width: 100%; /* Botón de ancho completo */
+  max-width: 200px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+

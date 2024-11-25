@@ -1,0 +1,90 @@
+/* Botón de segmento base */
+::ng-deep ion-segment-button {
+  --color: #ffffff; /* Color de texto normal */
+  --color-checked: #000000; /* Color de texto cuando está activo */
+  --background: #066cd8; /* Fondo azul por defecto */
+  --background-checked: #0400ff; /* Fondo amarillo cuando está activo */
+  --indicator-color: transparent; /* Oculta la barra indicadora */
+  font-weight: bold;
+  position: relative;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 5px; /* Separación entre botones */
+  box-shadow: 0 4px 6px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Efecto de escalado al pasar el cursor */
+::ng-deep ion-segment-button:hover {
+  transform: scale(1.1); /* Escala un poco el botón */
+  background-color: #0056b3; /* Azul más oscuro al pasar el cursor */
+}
+
+/* General para ion-segment-button */
+::ng-deep ion-segment-button {
+  --color: white; /* Color del texto */
+  position: relative;
+  font-weight: bold;
+  font-size: 14px; /* Tamaño del texto */
+  text-transform: uppercase; /* Mayúsculas para destacar */
+}
+
+/* Borde alrededor del texto */
+::ng-deep ion-segment-button {
+  --color: white; /* Color base del texto */
+  color: white;
+  -webkit-text-stroke: 0.5px black; /* Borde negro alrededor del texto */
+}
+
+/* Cuando el botón está activo */
+::ng-deep ion-segment-button.ion-activated {
+  -webkit-text-stroke: 1px yellow; /* Borde amarillo más grueso */
+  color: white;
+}
+
+/* Efecto al pasar el cursor */
+::ng-deep ion-segment-button:hover {
+  -webkit-text-stroke: 1px rgb(255, 255, 255); /* Cambia el borde a rojo */
+}
+
+
+/* Efecto de animación en el botón activo */
+::ng-deep ion-segment-button.ion-activated {
+  animation: pulse 1s infinite; /* Pulsación animada */
+}
+
+/* Animación de pulsación */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.05); /* Escala ligera */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Más sombra */
+  }
+}
+
+/* Línea divisoria entre botones */
+::ng-deep ion-segment-button::after {
+  content: '';
+  position: absolute;
+  right: 0; /* Línea al final del botón */
+  top: 50%; /* Centrada verticalmente */
+  transform: translateY(-50%);
+  height: 70%; /* Altura de la línea */
+  width: 2px; /* Grosor */
+  background-color: #ffffff; /* Color de la línea */
+  opacity: 0.6; /* Un poco transparente */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Oculta la línea del último botón */
+::ng-deep ion-segment-button:last-child::after {
+  display: none;
+}
+
+/* Efecto al pasar el cursor sobre la línea */
+::ng-deep ion-segment-button:hover::after {
+  opacity: 1; /* Más visible */
+  transform: translateY(-50%) scaleY(1.2); /* Más alta */
+}
